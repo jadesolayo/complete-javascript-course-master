@@ -142,3 +142,65 @@ console.log("String with \n multiple \n lines");
 console.log(`String
 multiple
 lines`);
+
+// Type Coercion
+
+console.log("I am " + 23 + " years old");
+
+console.log("23" - "10" - 3);
+
+console.log("23" * "2");
+
+console.log("23" / "2");
+
+let n = "1" + 1;
+
+n = n - 1;
+
+console.log(n);
+
+console.log(2 + 3 + 4 - "10");
+
+console.log((6 / "2") * "55");
+
+// Truthy and Falsy Values
+
+// 5 Falsy values: 0, " ", undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Jonas"));
+console.log(Boolean({}));
+console.log(Boolean(" "));
+
+const money = 0;
+
+if (money) {
+  console.log(`Don't Spend It All`)
+} else {
+  console.log(`Go and Get a Job`)
+}
+
+const height = 100;
+if (height) {
+  console.log(`Yay! Height is Defined`)
+} else {
+  console.log(`Height is undefined `)
+}
+
+const weight = '';
+
+if (weight) {
+  console.log(`Yay! Weight is Defined`)
+} else {
+  console.log(`Weight is undefined `)
+}
+
+
+// Equality operators == vs ===
+
+const age = 18;
+if (age === 18){
+  console.log("You just became a Youth ")
+}
+
