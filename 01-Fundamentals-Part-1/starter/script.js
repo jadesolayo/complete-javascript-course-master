@@ -107,6 +107,7 @@ TEST DATA 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1
 GOOD LUCK 😀 */
 
 // Solution
+/* 
 const massMark = 78;
 const heightMark = 1.69;
 const massJohn = 92;
@@ -118,7 +119,7 @@ const BMIJohn = massJohn / (heightJohn * heightJohn);
 const markHigherBMI = BMIMark > BMIJohn;
 
 console.log(BMIMark, BMIJohn, markHigherBMI);
-
+*/
 // Strings and Strings Literal
 
 const firstName = "Jonas";
@@ -142,3 +143,67 @@ console.log("String with \n multiple \n lines");
 console.log(`String
 multiple
 lines`);
+
+// Conditional Statements
+
+const age = 12;
+
+if (age >= 18) {
+  console.log("Sarah can start driving license 🚗");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young, Wait another ${yearsLeft}years ☹️ `);
+}
+const birthYears = 1991;
+let century;
+if (birthYears <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
+
+// Conditional Statement Challenge
+// Coding Challenge #2
+
+/*
+Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
+
+1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+
+HINT: Use an if/else statement 😉
+
+GOOD LUCK 😀
+*/
+
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+
+console.log(BMIMark, BMIJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark}) is higher than John's! (${BMIJohn})`);
+} else {
+  console.log(`John's BMI (${BMIJohn}) is higher than Mark's! (${BMIMark}) `);
+}
+
+// Type conversion and Type Coercion
+
+// Type conversion is when we manually convert from one type to another while type coercion is when JavaScript automatically converts it for us.
+
+// Type conversion
+
+const inputYear = "1991";
+console.log(Number(inputYear));
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
