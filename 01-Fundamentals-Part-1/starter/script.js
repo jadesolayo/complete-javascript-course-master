@@ -120,7 +120,7 @@ const markHigherBMI = BMIMark > BMIJohn;
 
 console.log(BMIMark, BMIJohn, markHigherBMI);
 */
-// Strings and Strings Literal
+// Strings and Template Literal
 
 const firstName = "Jonas";
 const job = "teacher";
@@ -143,6 +143,69 @@ console.log("String with \n multiple \n lines");
 console.log(`String
 multiple
 lines`);
+
+// Conditional Statements
+
+const age = 12;
+
+if (age >= 18) {
+  console.log("Sarah can start driving license 🚗");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young, Wait another ${yearsLeft}years ☹️ `);
+}
+const birthYears = 1991;
+let century;
+if (birthYears <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
+// Conditional Statement Challenge
+// Coding Challenge #2
+
+/*
+Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
+
+1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+
+HINT: Use an if/else statement 😉
+
+GOOD LUCK 😀
+*/
+
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+
+console.log(BMIMark, BMIJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark}) is higher than John's! (${BMIJohn})`);
+} else {
+  console.log(`John's BMI (${BMIJohn}) is higher than Mark's! (${BMIMark}) `);
+}
+
+// Type conversion and Type Coercion
+
+// Type conversion is when we manually convert from one type to another while type coercion is when JavaScript automatically converts it for us.
+
+// Type conversion
+
+const inputYear = "1991";
+console.log(Number(inputYear));
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
 
 // Type Coercion
 
@@ -199,71 +262,64 @@ if (weight) {
 
 // Equality operators == vs ===
 
-const age = 18;
-if (age === 18) {
-  console.log("You just became a Youth ");
-}
+// const age = 18;
+// if (age === 18) {
+//   console.log("You just became a Youth ");
+// }
 
-// Conditional Statements
+//This is where I started from on Sunday
 
-const age = 12;
+// Boolean Logic
+// Boolean Logic is a branch of computer science which uses true and false values to solve complex logical problems. It uses several logical operators to combine true and false values.
 
-if (age >= 18) {
-  console.log("Sarah can start driving license 🚗");
+const hasDriversLicense = true;
+const hasGoodVision = true;
+const isTired = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+console.log(!hasGoodVision);
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log(`Sarah is able to drive!`);
 } else {
-  const yearsLeft = 18 - age;
-  console.log(`Sarah is too young, Wait another ${yearsLeft}years ☹️ `);
+  console.log(
+    `Another person should drive as Sarah did not meet all of the conditions 😔`
+  );
 }
-const birthYears = 1991;
-let century;
-if (birthYears <= 2000) {
-  century = 20;
-} else {
-  century = 21;
-}
-console.log(century);
 
-// Conditional Statement Challenge
-// Coding Challenge #2
+// Coding Challenge #3
 
 /*
-Use the BMI example from Challenge #1, and the code you already wrote, and improve it:
+There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins the a trophy!
 
-1. Print a nice output to the console, saying who has the higher BMI. The message can be either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
-2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!"
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't forget that there can be a draw, so test for that as well (draw means they have the same average score).
 
-HINT: Use an if/else statement 😉
+3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
+4. BONUS 2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy.
+
+TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 
 GOOD LUCK 😀
 */
 
-const massMark = 78;
-const heightMark = 1.69;
-const massJohn = 92;
-const heightJohn = 1.95;
+// Solution
 
-const BMIMark = massMark / heightMark ** 2;
-const BMIJohn = massJohn / (heightJohn * heightJohn);
+const teamDolphin = (96 + 108 + 89) / 3;
+const teamKoalas = (88 + 91 + 110) / 3;
+console.log(teamDolphin, teamKoalas);
 
-console.log(BMIMark, BMIJohn);
+if (teamDolphin > teamKoalas) {
+  console.log(`Team Dolphin wins the trophy!`);
+} else if (teamKoalas > teamDolphin) {
+  console.log(`Team koalas wins the trophy!`);
+} else console.log(`Teams played draw so no one wins the trophy!`);
 
-if (BMIMark > BMIJohn) {
-  console.log(`Mark's BMI (${BMIMark}) is higher than John's! (${BMIJohn})`);
-} else {
-  console.log(`John's BMI (${BMIJohn}) is higher than Mark's! (${BMIMark}) `);
-}
-
-// Type conversion and Type Coercion
-
-// Type conversion is when we manually convert from one type to another while type coercion is when JavaScript automatically converts it for us.
-
-// Type conversion
-
-const inputYear = "1991";
-console.log(Number(inputYear));
-console.log(Number(inputYear) + 18);
-
-console.log(Number("Jonas"));
-console.log(typeof NaN);
-
-console.log(String(23), 23);
+const teamDolphinBonus = (97 + 112 + 101) / 3;
+const teamKoalasBonus = (109 + 95 + 106) / 3;
+console.log(teamDolphinBonus, teamKoalasBonus);
