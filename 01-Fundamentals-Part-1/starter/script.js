@@ -318,6 +318,21 @@ if (teamDolphin > teamKoalas) {
   console.log(`Team koalas wins the trophy!`);
 } else console.log(`Teams played draw so no one wins the trophy!`);
 
+// Bonus points
 const teamDolphinBonus = (97 + 112 + 101) / 3;
-const teamKoalasBonus = (109 + 95 + 106) / 3;
+const teamKoalasBonus = (109 + 95 + 123) / 3;
 console.log(teamDolphinBonus, teamKoalasBonus);
+
+if (teamDolphinBonus > teamKoalasBonus && teamDolphinBonus >= 100) {
+  console.log(`Team Dolphin wins the trophy!`);
+} else if (teamKoalasBonus > teamDolphinBonus && teamKoalasBonus >= 100) {
+  console.log(`Team koalas wins the trophy!`);
+} else if (
+  teamDolphinBonus === teamKoalasBonus &&
+  teamDolphinBonus >= 100 &&
+  teamKoalasBonus >= 100
+) {
+  console.log(`Both wins the trophy!`);
+} else {
+  console.log(`No one wins the Trophy!`);
+}
