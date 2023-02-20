@@ -176,31 +176,48 @@ console.log(Boolean(" "));
 const money = 0;
 
 if (money) {
-  console.log(`Don't Spend It All`)
+  console.log(`Don't Spend It All`);
 } else {
-  console.log(`Go and Get a Job`)
+  console.log(`Go and Get a Job`);
 }
 
 const height = 100;
 if (height) {
-  console.log(`Yay! Height is Defined`)
+  console.log(`Yay! Height is Defined`);
 } else {
-  console.log(`Height is undefined `)
+  console.log(`Height is undefined `);
 }
 
-const weight = '';
+const weight = "";
 
 if (weight) {
-  console.log(`Yay! Weight is Defined`)
+  console.log(`Yay! Weight is Defined`);
 } else {
-  console.log(`Weight is undefined `)
+  console.log(`Weight is undefined `);
 }
-
 
 // Equality operators == vs ===
 
-const age = 18;
-if (age === 18){
-  console.log("You just became a Youth ")
+const age = "18";
+if (age === 18) {
+  console.log("You just became a Youth (strict)");
 }
+if (age == 18) {
+  console.log("You just became a Youth (loose)");
+}
+const favorite = Number(prompt("What's Your favorite Number"));
+console.log(favorite);
+console.log(typeof favorite);
 
+if (favorite === 23) {
+  console.log(`Cool! 23 is an amazing number!`);
+} else if (favorite === 7) {
+  `7 is also a cool number!`;
+} else if (favorite === 9) {
+  console, log("9 is also not bad!");
+} else {
+  console.log(`Wrong! The number is in between 23, 7 and 9`);
+}
+if (favorite !== 23) {
+  console.log("Why not try 23, 7 or 9?");
+}
