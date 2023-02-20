@@ -254,7 +254,6 @@ if (height) {
 }
 
 const weight = "";
-const weight = "";
 
 if (weight) {
   console.log(`Yay! Weight is Defined`);
@@ -264,13 +263,13 @@ if (weight) {
 
 // Equality operators == vs ===
 
-const age = "18";
-if (age === 18) {
-  console.log("You just became a Youth (strict)");
-}
-if (age == 18) {
-  console.log("You just became a Youth (loose)");
-}
+// const age = "18";
+// if (age === 18) {
+//   console.log("You just became a Youth (strict)");
+// }
+// if (age == 18) {
+//   console.log("You just became a Youth (loose)");
+// }
 const favorite = Number(prompt("What's Your favorite Number"));
 console.log(favorite);
 console.log(typeof favorite);
