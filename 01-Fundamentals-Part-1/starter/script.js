@@ -270,22 +270,22 @@ if (weight) {
 // if (age == 18) {
 //   console.log("You just became a Youth (loose)");
 // }
-const favorite = Number(prompt("What's Your favorite Number"));
-console.log(favorite);
-console.log(typeof favorite);
+// const favorite = Number(prompt("What's Your favorite Number"));
+// console.log(favorite);
+// console.log(typeof favorite);
 
-if (favorite === 23) {
-  console.log(`Cool! 23 is an amazing number!`);
-} else if (favorite === 7) {
-  `7 is also a cool number!`;
-} else if (favorite === 9) {
-  console, log("9 is also not bad!");
-} else {
-  console.log(`Wrong! The number is in between 23, 7 and 9`);
-}
-if (favorite !== 23) {
-  console.log("Why not try 23, 7 or 9?");
-}
+// if (favorite === 23) {
+//   console.log(`Cool! 23 is an amazing number!`);
+// } else if (favorite === 7) {
+//   `7 is also a cool number!`;
+// } else if (favorite === 9) {
+//   console, log("9 is also not bad!");
+// } else {
+//   console.log(`Wrong! The number is in between 23, 7 and 9`);
+// }
+// if (favorite !== 23) {
+//   console.log("Why not try 23, 7 or 9?");
+// }
 
 // Coding Challenge #3
 
@@ -335,3 +335,53 @@ if (teamDolphinBonus > teamKoalasBonus && teamDolphinBonus >= 100) {
 } else {
   console.log(`No one wins the Trophy!`);
 }
+
+// SWITCH STATEMENTS
+
+const day = `Monday`;
+
+switch (day) {
+  case `Monday`:
+    console.log(`Plan course structure`);
+    console.log(`Go to a coding meetup`);
+    break;
+  case `Tuesday`:
+    console.log(`Prepare theory videos`);
+    break;
+  case `Wednesday`:
+  case `Thursday`:
+    console.log(`Write code examples`);
+    break;
+  case `Friday`:
+    console.log(`Record videos`);
+    break;
+  case `Saturday`:
+  case `Sunday`:
+    console.log(`Enjoy the weekend!`);
+    break;
+  default:
+    console.log("Not a valid day!");
+    break;
+}
+// As an If Else Statement
+
+const dayOfTheWeek = `Thursday`;
+
+if (dayOfTheWeek === `Monday`) {
+  console.log(`Plan course structure`);
+  console.log(`Go to a coding meetup`);
+} else if (dayOfTheWeek === `Tuesday`) {
+  console.log(`Prepare theory videos`);
+} else if (dayOfTheWeek === `Wednesday` || dayOfTheWeek === `Thursday`) {
+  console.log(`Write code examples`);
+} else if (dayOfTheWeek === `Friday`) {
+  console.log(`Record videos`);
+} else if (dayOfTheWeek === `Saturday` || dayOfTheWeek === `Sunday`) {
+  console.log(`Enjoy the weekend!`);
+} else {
+  console.log(`Not a valid day!`);
+}
+
+// Statement and Expression
+// An Expression is a piece of code that produces a value e.g 3 + 4, 1222, true && false || true && false;
+// A statement is a bigger piece of code that is executed and it does not produces a value on itself e.g if else statement
