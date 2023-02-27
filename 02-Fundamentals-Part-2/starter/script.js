@@ -158,29 +158,59 @@ GOOD LUCK 😀
 
 // MY SOLUTION
 
-const calcAverage = (score1, score2, score3) => {
-  const averageScores = (score1 + score2 + score3) / 3;
-  return averageScores;
-};
+// const calcAverage = (score1, score2, score3) => {
+//   const averageScores = (score1 + score2 + score3) / 3;
+//   return averageScores;
+// };
 
-const teamDolphins = calcAverage(44, 23, 71);
-console.log(teamDolphins);
+// const teamDolphins = calcAverage(85, 54, 41);
+// console.log(teamDolphins);
 
-const teamKoalas = calcAverage(65, 54, 49);
-console.log(teamKoalas);
+// const teamKoalas = calcAverage(23, 34, 27);
+// console.log(teamKoalas);
 
-function checkWinner(avgDolphins, avgKoalas) {
+// console.log(teamDolphins, teamKoalas);
+// function checkWinner(avgDolphins, avgKoalas) {
+//   if (avgDolphins >= 2 * avgKoalas) {
+//     console.log(`Team Dolphins win! 🎉(${teamDolphins} vs.${teamKoalas})`);
+
+//     return avgDolphins >= 2 * avgKoalas;
+//   } else if (avgKoalas >= 2 * avgDolphins) {
+//     console.log(`Team Koalas win! 🎉(${teamKoalas} vs.${teamDolphins})`);
+
+//     return avgKoalas >= 2 * avgDolphins;
+//   } else {
+//     console.log(`No Team Wins!😪`);
+//   }
+//   return -1;
+// }
+// checkWinner(60, 28);
+
+// INSTRUCTOR SOLUTION
+
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+// Test 1
+
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
   if (avgDolphins >= 2 * avgKoalas) {
-    console.log(`Team Dolphins win! 🎉(${teamDolphins} vs.${teamKoalas})`);
-
-    return avgDolphins >= 2 * avgKoalas;
+    console.log(`Team Dolphins win! 🎉(${scoreDolphins} vs. ${scoreKoalas})`);
   } else if (avgKoalas >= 2 * avgDolphins) {
-    console.log(`Team Koalas win! 🎉(${teamKoalas} vs.${teamDolphins})`);
-
-    return avgKoalas >= 2 * avgDolphins;
+    console.log(`Team Koalas win! 🎉(${scoreKoalas} vs. ${scoreDolphins})`);
   } else {
     console.log(`No Team Wins!😪`);
   }
-  return -1;
-}
-checkWinner(46, 56);
+};
+checkWinner(scoreDolphins, scoreKoalas);
+
+// Test 2
+
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+console.log(scoreDolphins, scoreKoalas);
+
+checkWinner(scoreDolphins, scoreKoalas);
