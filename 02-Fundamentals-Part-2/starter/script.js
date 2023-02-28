@@ -214,3 +214,5 @@ scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 
 checkWinner(scoreDolphins, scoreKoalas);
+
+// ARRAYS
