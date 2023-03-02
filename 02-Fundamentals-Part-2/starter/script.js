@@ -39,26 +39,26 @@ logger();
 // Function Declarations and Function Expression
 
 // Function Declaration
-function calcAge1(birthYear) {
-  return 2023 - birthYear;
-}
-const age1 = calcAge1(2000);
-// Function Expression
+// function calcAge1(birthYear) {
+//   return 2023 - birthYear;
+// }
+// const age1 = calcAge1(2000);
+// // Function Expression
 
-const calcAge2 = function (birthYear) {
-  return 2023 - birthYear;
-};
-const age2 = calcAge2(2000);
+// const calcAge2 = function (birthYear) {
+//   return 2023 - birthYear;
+// };
+// const age2 = calcAge2(2000);
 
-console.log(age1, age2);
+// console.log(age1, age2);
 
 // The major difference between a function expression and a function declaration is that function declaration can be initialized before declaraing while function expression cannot.
 
 // Arrow Functions
 
-const calcAge3 = (birthYear) => 2023 - birthYear;
-const age3 = calcAge3(1991);
-console.log(age3);
+// const calcAge3 = (birthYear) => 2023 - birthYear;
+// const age3 = calcAge3(1991);
+// console.log(age3);
 
 // const yearsUntilRetirement = (birthYear, firstName) => {
 //   const age = 2023 - birthYear;
@@ -97,24 +97,24 @@ console.log(fruitProcessor(3, 6));
 // REVIEWING FUNCTIONS
 // the return statement immediately exit a function once it is added and everything after the return statement is ignored.
 
-const calcAge = function (birthYear) {
-  return 2023 - birthYear;
-};
+// const calcAge = function (birthYear) {
+//   return 2023 - birthYear;
+// };
 
-const yearsUntilRetirement = function (birthYear, firstName) {
-  const age2 = calcAge(birthYear);
-  const retirement = 65 - age2;
+// const yearsUntilRetirement = function (birthYear, firstName) {
+//   const age2 = calcAge(birthYear);
+//   const retirement = 65 - age2;
 
-  if (retirement > 0) {
-    console.log(`${firstName} will retire in ${retirement} years`);
-    return retirement;
-  } else {
-    console.log(`${firstName} has already retired 🎉`);
-    return -1;
-  }
-};
-console.log(yearsUntilRetirement(1990, "Esther"));
-console.log(yearsUntilRetirement(1940, "Rebecca"));
+//   if (retirement > 0) {
+//     console.log(`${firstName} will retire in ${retirement} years`);
+//     return retirement;
+//   } else {
+//     console.log(`${firstName} has already retired 🎉`);
+//     return -1;
+//   }
+// };
+// console.log(yearsUntilRetirement(1990, "Esther"));
+// console.log(yearsUntilRetirement(1940, "Rebecca"));
 
 // The Three types of functions and how they are written:
 
@@ -216,3 +216,80 @@ console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
 
 // ARRAYS
+
+const friends = ["Michael", "Steven", "Peter", "Jonas"];
+console.log(friends);
+
+// Another way to write an Array
+const years = new Array(1991, 1992, 1967, 2006, 1990);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+// To get the length of an array
+console.log(friends.length);
+
+// To get the last input of an array
+console.log(friends[friends.length - 1]);
+
+// To replace an input of an array
+friends[2] = "Jay";
+console.log(friends);
+// At this instance, Peter has been replaced with Jay
+
+const firstName = "Jonas";
+const jonas = [firstName, "Schmedtmann", 2037 - 1990, "teacher", friends];
+console.log(jonas);
+
+// Excercise
+
+const calcAge = function (birthYear) {
+  return 2023 - birthYear;
+};
+const year = new Array(1991, 1992, 1967, 2006, 1990);
+const ages1 = calcAge(year[0]);
+const ages2 = calcAge(year[1]);
+const ages3 = calcAge(year[2]);
+const ages4 = calcAge(year[year.length - 1]);
+const ages = [
+  calcAge(year[0]),
+  calcAge(year[1]),
+  calcAge(year[2]),
+  calcAge(year[year.length - 1]),
+];
+console.log(ages);
+console.log(ages.length);
+
+// ARRAY METHODS
+const fruits = ["Mango", "Apple", "Banana", "Pineapple", "Watermelon"];
+
+// Adding Elements to an Array
+const newLength = fruits.push("Guava"); //Add elemets to the end of an array;
+console.log(newLength);
+
+fruits.unshift("Orange"); //Add elements to the beginning of am array
+console.log(fruits);
+
+// Removing elements from an array
+fruits.pop(); //remove elemets at the end of an array;
+const popped = fruits.pop();
+console.log(popped);
+console.log(fruits);
+
+fruits.shift(); //remove elemets at the beginning of an array;
+console.log(fruits);
+
+console.log(fruits.indexOf("Apple"));
+console.log(fruits.indexOf("Pineapple"));
+
+fruits.push(34);
+console.log(fruits);
+
+console.log(fruits.includes("Pineapple"));
+console.log(fruits.includes("34")); //Strict checking
+
+if (fruits.includes("Watermelon")) {
+  console.log("Watermelon is in your fruit basket 🍉 ");
+} else {
+  console.log("Not found");
+}
