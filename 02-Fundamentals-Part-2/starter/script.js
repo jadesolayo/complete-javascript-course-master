@@ -293,3 +293,30 @@ if (fruits.includes("Watermelon")) {
 } else {
   console.log("Not found");
 }
+
+const david = {
+  firstName: "David",
+  lastName: "Scotland",
+  birthYear: 1991,
+  job: "Teacher",
+  friends: [`Michael`, `Peter`, `Steven`],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  obtainDriversLicense: function () {
+    if (this.hasDriversLicense) {
+      return "he has drivers license";
+    } else {
+      return "he has no drivers license";
+    }
+  },
+
+};
+console.log(david.calcAge());
+
+console.log(
+  `${david.firstName} is a ${david.age} year old teacher, and ${david.obtainDriversLicense()}`
+);
