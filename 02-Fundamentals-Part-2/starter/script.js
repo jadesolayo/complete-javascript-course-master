@@ -294,6 +294,26 @@ if (fruits.includes("Watermelon")) {
   console.log("Not found");
 }
 
+// DOT VS. BRACKET NOTATION
+const bob = {
+  firstName: "Bob",
+  lastName: "Hailey",
+  birthYear: 1990,
+  job: "Mechanic",
+  friends: [`Boston`, `Stella`, `Rose`],
+  hasDriversLicense: true,
+};
+console.log(bob);
+
+// Dot Notation
+console.log(bob.lastName);
+
+// Bracket Notation
+console.log(bob["firstName"]);
+
+// OBJECT METHODS
+//  A method is any function that is attached to an object
+
 const david = {
   firstName: "David",
   lastName: "Scotland",
@@ -302,21 +322,58 @@ const david = {
   friends: [`Michael`, `Peter`, `Steven`],
   hasDriversLicense: true,
 
+  // An example of a method
+  // calcAge: function (birthYear) {
+  //   return = 2037 - david.birthYear;
+  // },
+
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2037 - this.birthYear;
+  // },
+
   calcAge: function () {
     this.age = 2037 - this.birthYear;
     return this.age;
   },
-  obtainDriversLicense: function () {
-    if (this.hasDriversLicense) {
-      return "he has drivers license";
-    } else {
-      return "he has no drivers license";
-    }
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} years old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
   },
-
 };
-console.log(david.calcAge());
+console.log(david.getSummary());
+// Arrays are also objects but a special kind of object and they have methods like (push, pop, shift,length e.t.c.) that we can use to manipulate them. The methods mentioned earlier are built in funtions and they have been designed to work in a certain way but in objects, we are allowed to create our methods
+// console.log(david.calcAge(1991));
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
 
-console.log(
-  `${david.firstName} is a ${david.age} year old teacher, and ${david.obtainDriversLicense()}`
-);
+// console.log(david["calcAge"](1991));
+
+// const david = {
+//   firstName: "David",
+//   lastName: "Scotland",
+//   birthYear: 1991,
+//   job: "Teacher",
+//   friends: [`Michael`, `Peter`, `Steven`],
+//   hasDriversLicense: true,
+
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
+//   obtainDriversLicense: function () {
+//     if (this.hasDriversLicense) {
+//       return "he has drivers license";
+//     } else {
+//       return "he has no drivers license";
+//     }
+//   },
+
+// };
+// console.log(david.calcAge());
+
+// console.log(
+//   `${david.firstName} is a ${david.age} year old teacher, and ${david.obtainDriversLicense()}`
+// );
