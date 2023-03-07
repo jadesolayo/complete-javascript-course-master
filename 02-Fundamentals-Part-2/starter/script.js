@@ -311,6 +311,9 @@ console.log(bob.lastName);
 // Bracket Notation
 console.log(bob["firstName"]);
 
+const nameKey = "Name";
+console.log(bob["first" + nameKey]);
+console.log(bob["last" + nameKey]);
 // OBJECT METHODS
 //  A method is any function that is attached to an object
 
