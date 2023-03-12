@@ -237,28 +237,28 @@ friends[2] = "Jay";
 console.log(friends);
 // At this instance, Peter has been replaced with Jay
 
-const firstName = "Jonas";
-const jonas = [firstName, "Schmedtmann", 2037 - 1990, "teacher", friends];
-console.log(jonas);
+// const firstName = "Jonas";
+// const jonas = [firstName, "Schmedtmann", 2037 - 1990, "teacher", friends];
+// console.log(jonas);
 
-// Excercise
+// // Excercise
 
-const calcAge = function (birthYear) {
-  return 2023 - birthYear;
-};
-const year = new Array(1991, 1992, 1967, 2006, 1990);
-const ages1 = calcAge(year[0]);
-const ages2 = calcAge(year[1]);
-const ages3 = calcAge(year[2]);
-const ages4 = calcAge(year[year.length - 1]);
-const ages = [
-  calcAge(year[0]),
-  calcAge(year[1]),
-  calcAge(year[2]),
-  calcAge(year[year.length - 1]),
-];
-console.log(ages);
-console.log(ages.length);
+// const calcAge = function (birthYear) {
+//   return 2023 - birthYear;
+// };
+// const year = new Array(1991, 1992, 1967, 2006, 1990);
+// const ages1 = calcAge(year[0]);
+// const ages2 = calcAge(year[1]);
+// const ages3 = calcAge(year[2]);
+// const ages4 = calcAge(year[year.length - 1]);
+// const ages = [
+//   calcAge(year[0]),
+//   calcAge(year[1]),
+//   calcAge(year[2]),
+//   calcAge(year[year.length - 1]),
+// ];
+// console.log(ages);
+// console.log(ages.length);
 
 // ARRAY METHODS
 const fruits = ["Mango", "Apple", "Banana", "Pineapple", "Watermelon"];
@@ -323,16 +323,16 @@ console.log(bills, tips, totals);
 
 // OBJECTS
 
-const jonasArray = [
-  //This ia an array syntax
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1990,
-  "Teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jonas = [
+//   //This ia an array syntax
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1990,
+//   "Teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
 
-const jonasObject = {
+const jonas = {
   firstName: "Jonas",
   lastName: "Schmedtmann",
   age: 2037 - 1990,
@@ -362,6 +362,27 @@ const nameKey = "Name";
 console.log(bob["first" + nameKey]);
 console.log(bob["last" + nameKey]);
 
+// Need for Bracket Notation
+// const interestedIn = prompt(
+//   `What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends`
+// );
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log(
+//     "Wrong request! çhoose between firstName, lastName, age, job, and friends"
+//   );
+// }
+
+// Modifying an object
+jonas.location = "Portugal"; // With dot notation
+jonas["twitter"] = "@jonasschedtmann"; //With bracket notation
+console.log(jonas);
+// Challenge
+// Jonas has 3 friends and his best friend is Michael. (Rewrite this with the object above)
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} and his best friend is ${jonas.friends[0]}`
+);
 // OBJECT METHODS
 //  A method is any function that is attached to an object
 
@@ -487,4 +508,36 @@ if (mark.BMIvalue > john.BMIvalue) {
       mark.fullName
     }'s BMI (${mark.calcBMI()})`
   );
+}
+
+// ITERATION - FOR LOOP
+// A for loop is a loop that will keep running as long as the condition is true.
+// Instead of doing this
+// console.log("Lifting weights repetition 1 ");
+// console.log("Lifting weights repetition 2 ");
+// console.log("Lifting weights repetition 3 ");
+// console.log("Lifting weights repetition 4 ");
+// console.log("Lifting weights repetition 5 ");
+// console.log("Lifting weights repetition 6 ");
+// console.log("Lifting weights repetition 7 ");
+// console.log("Lifting weights repetition 8 ");
+// console.log("Lifting weights repetition 9 ");
+// console.log("Lifting weights repetition 10 ");
+
+// A for loop allows us to do this
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+// LOOPING ARRAYS
+const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1990,
+  "Teacher",
+  ["Michael", "Peter", "Steven"],
+];
+// To loop this array we do this:
+for (let i = 0; i < jonasArray.length; i++) {
+  console.log(jonasArray[i]);
 }
