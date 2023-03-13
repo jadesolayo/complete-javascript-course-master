@@ -651,22 +651,27 @@ const totals = [];
 const calcTip = function (bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
+// for (let i = 0; i < bills.length; i++) {
+//   tips.push(calcTip(bills[i]));
+//   totals.push(bills[i] + tips[i]);
+// }
+// console.log(bills, tips, totals);
+
+// TUTOR'S SOLUTION
 for (let i = 0; i < bills.length; i++) {
-  tips.push(calcTip(bills[i]));
-}
-for (let i = 0; i < bills.length; i++) {
-  totals.push(bills[i] + tips[i]);
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
 console.log(bills, tips, totals);
 
 // BONUS QUESTION SOLUTION
-let sum = 0;
 const calcAverage = function (arr) {
-  for (let i = 0; i < totals.length; i++) {
-    sum + bills[i];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // sum = sum + arr[i]
+    sum += arr[i];
   }
+  return sum / arr.length;
 };
 console.log(calcAverage(totals));
-// const calcAge = function (birthYear){
-//   return 2023 - birthYear;
-// }
