@@ -660,7 +660,13 @@ for (let i = 0; i < bills.length; i++) {
 console.log(bills, tips, totals);
 
 // BONUS QUESTION SOLUTION
-
+let sum = 0;
+const calcAverage = function (arr) {
+  for (let i = 0; i < totals.length; i++) {
+    sum + bills[i];
+  }
+};
+console.log(calcAverage(totals));
 // const calcAge = function (birthYear){
 //   return 2023 - birthYear;
 // }
