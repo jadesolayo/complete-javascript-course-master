@@ -72,11 +72,38 @@ console.log(anotherPerson.getHobbies());
 
 // Write a JavaScript function that takes an array of numbers and returns the sum of all the numbers in the array.
 // const arrayNum = [2, 3, 4, 5, 6, 7, 1, 3, 5, 6];
-function sumArray(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum;
+// }
+// console.log(sumArray([2, 3, 4, 5, 6, 7, 1, 3, 5, 6]));
+
+// Write a JavaScript function that takes a string and returns the number of vowels in the string.
+
+const stringEntered = prompt("Enter a word");
+function checkVowel(str) {
+  let count = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i].toLowerCase())) {
+      count++;
+    }
   }
-  return sum;
+  return count;
 }
-console.log(sumArray([2, 3, 4, 5, 6, 7, 1, 3, 5, 6]));
+console.log(checkVowel(stringEntered));
+
+function countVowels(str) {
+  let count = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i].toLowerCase())) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countVowels("Basketball"));
