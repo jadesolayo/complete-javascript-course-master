@@ -250,7 +250,7 @@ const height = 100;
 if (height) {
   console.log(`Yay! Height is Defined`);
 } else {
-  console.log(`Height is undefined `);
+  console.log(`Height is undefined  `);
 }
 
 const weight = "";
@@ -384,7 +384,7 @@ if (dayOfTheWeek === `Monday`) {
 
 // Statement and Expression
 // An Expression is a piece of code that produces a value e.g 3 + 4, 1222, true && false || true && false;
-// A statement is a bigger piece of code that is executed and it does not produces a value on itself e.g if else statement
+// A statement is a bigger piece of code that is executed bsed on a value and it does not produces a value on itself e.g if else statement
 
 // Ternary Operator
 
