@@ -29,7 +29,7 @@ const calcTempAmplitude = function (temps) {
     const curTemp = temps[i];
     if (typeof curTemp !== 'number') continue;
 
-    if (curTemp > max) max = curTemp;
+    if (curTemp > max) max = curTemp ;
     if (curTemp < min) min = curTemp;
   }
   console.log(max, min);
