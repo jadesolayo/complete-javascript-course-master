@@ -1,7 +1,7 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-/*
+
 ///////////////////////////////////////
 // Using Google, StackOverflow and MDN
 
@@ -21,7 +21,7 @@ const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 // - Find min value in temp array
 // - Subtract min from max (amplitude) and return it
 
-const calcTempAmplitude = function (temps) {
+/* const calcTempAmplitude = function (temps) {
   let max = temps[0];
   let min = temps[0];
 
@@ -68,15 +68,15 @@ const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeNew);
 
 
-///////////////////////////////////////
-// Debugging with the Console and Breakpoints
+/////////////////////////////////////
+Debugging with the Console and Breakpoints
 const measureKelvin = function () {
   const measurement = {
     type: 'temp',
     unit: 'celsius',
 
-    // C) FIX
-    // value: Number(prompt('Degrees celsius:')),
+    C) FIX
+    value: Number(prompt('Degrees celsius:')),
     value: 10,
   };
 

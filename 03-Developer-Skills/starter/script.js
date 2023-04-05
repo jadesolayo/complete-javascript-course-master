@@ -38,9 +38,11 @@ const calcTempAmplitude = function (temps) {
   console.log(max, min);
   return max - min;
 };
-
 const amplitude = calcTempAmplitude(temperatures);
 console.log(amplitude);
+
+console.log(temperatures.length);
+
 // PROBLEM 2:
 // Function should now receive 2 arrays of temps
 
@@ -84,11 +86,11 @@ const measureKelvin = function () {
     unit: "celsius",
 
     // C) FIX
-    value: Number(prompt("Degree Celsius")),
+    value: 30,
   };
-
-// B)  FIND
-  console.table(measurement); 
+ 
+  // B)  FIND
+  console.table(measurement);
   const kelvin = measurement.value + 273;
   return kelvin;
 };
