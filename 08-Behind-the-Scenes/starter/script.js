@@ -136,7 +136,7 @@ const jonas = {
   //   };
   //   isMillenial();
   // }, 
-  //Here the arrow fnction will use the this keyword of its parent which is the calcAge.
+  //Here the arrow function will use the this keyword of its parent which is the calcAge.
   },
   greet: () => console.log(`Hey! ${this.firstName}`), //Don't do this. This is because arrow function do not get their own this keyword. They take the this keyword of their parent element which in this case is the global variable which has the window object.
   // greet: function () {
@@ -166,7 +166,7 @@ jonas.calcAge();
 // let lastName = 'Williams';
 // let oldLastName = lastName;
 // lastName = 'Davis';
-// console.log(lastName, oldLastName);
+// console.log(lastName + " , " + oldLastName);
 
 // // Reference types
 // const jessica = {
@@ -178,7 +178,7 @@ jonas.calcAge();
 // marriedJessica.lastName = 'Davis';
 // console.log('Before marriage:', jessica);
 // console.log('After marriage: ', marriedJessica);
-// // marriedJessica = {};
+// marriedJessica = {};
 
 // // Copying objects
 // const jessica2 = {
