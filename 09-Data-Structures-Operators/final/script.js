@@ -809,7 +809,7 @@ const mainMenuCopy = [...restaurant.mainMenu];
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
-// Iterables: arrays, strings, maps, sets. NOT objects
+Iterables: arrays, strings, maps, sets. NOT objects
 const str = 'Jonas';
 const letters = [...str, ' ', 'S.'];
 console.log(letters);
