@@ -1,56 +1,4 @@
 'use strict';
-
-//  const restaurant = {
-//    name: 'Classico Italiano',
-//    location: 'Via Angelo Tavanti 23, Firenze, Italy',
-//    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-//    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-//    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-//    order: function (starterIndex, mainIndex) {
-//      return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-//    },
-//  };
-/*
- Destructuing Arrays
-
- const arr = [2, 3, 4];
-
- Before ES6
- const a = arr[0];
- const b = arr[1];
- const c = arr[2];
-
- Using Destructuring
- const [x, y, z] = arr;
- console.log(x, y, z);
-
- let [main, secondary] = restaurant.categories;
- console.log(main, secondary);
-
- switching Variables before ES6
- let temp = main;
- main = secondary;
- secondary = temp;
- console.log(main, secondary);
-
- Switching variables
- [main, secondary] = [secondary, main];
- console.log(main, secondary);
-
- Receiving two return values from a function.
- const [starter, mainCourse] = restaurant.order(2, 0);
- console.log(starter, main);
-
- Nested destructuring
- const nested = [2, [4, 5]];
- const [i, [j, k]] = nested;
- console.log(i, j, k);
-
- Setting Default values
- const [p = 8, q = 8, r = 5] = [5];
- console.log(p, q, r);
-
- */
 const weekdays = ['mon', 'tue', 'wed', 'thurs', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -99,9 +47,73 @@ const restaurant = {
   },
 };
 
+// Notes on SET
+//  Sets are a collection of unique values. A set can never have any duplicates and that makes them very useful in certain situations. Just like array and strings, sets are also iterables.
+//  A set differs from an array in two ways:
+// 1) Its Element are unique
+// 2) The order of elemets in a set is irrelevant.
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]); 
+console.log(orderSet);
+console.log(new Set (`Jonas`));
+
+// To get the size of a Set
+console.log(orderSet.size);
+
+// To check if an element is in  Set
+console.log();
+
+/*
+ Destructuing Arrays
+
+ const arr = [2, 3, 4];
+
+ Before ES6
+ const a = arr[0];
+ const b = arr[1];
+ const c = arr[2];
+
+ Using Destructuring
+ const [x, y, z] = arr;
+ console.log(x, y, z);
+
+ let [main, secondary] = restaurant.categories;
+ console.log(main, secondary);
+
+ switching Variables before ES6
+ let temp = main;
+ main = secondary;
+ secondary = temp;
+ console.log(main, secondary);
+
+ Switching variables
+ [main, secondary] = [secondary, main];
+ console.log(main, secondary);
+
+ Receiving two return values from a function.
+ const [starter, mainCourse] = restaurant.order(2, 0);
+ console.log(starter, main);
+
+ Nested destructuring
+ const nested = [2, [4, 5]];
+ const [i, [j, k]] = nested;
+ console.log(i, j, k);
+
+ Setting Default values
+ const [p = 8, q = 8, r = 5] = [5];
+ console.log(p, q, r);
+
+ */
+
 // Looping  Objects, Object keys, Values and Entries
 
-// Property Names
+/* Property Names
 const properties = Object.keys(openingHours);
 console.log(properties);
 
@@ -111,15 +123,15 @@ for (const day of properties) {
 }
 console.log(openStr);
 
-// Property Values
+Property Values
 const values = Object.values(openingHours);
 console.log(values);
 
-// Entire Object
+Entire Object
 const entries = Object.entries(openingHours);
 console.log(entries);
 
-// [key, value]
+[key, value]
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}`);
 }
@@ -132,7 +144,7 @@ if (restaurant.openingHours && restaurant.openingHours.open) {
 }
 
  Without Optional chaining
- console.log(restaurant.openingHours.mon?.open);
+ console.log(restaurant.openingHours.mon.open);
 
 With Optional Chaining
 console.log(restaurant.openingHours.mon?.open);
@@ -159,13 +171,14 @@ console.log(users[0]?.name ?? `User array empty`);
 if (users.length > 0) console.log(users[0].email);
 else console.log('user array empty');
 
- The For-of Loop
+ The For-of Loop 
  const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
  for (const item of menu) console.log(item);
 
  for (const [i, el] of menu.entries()) {
    console.log(`${[i + 1]}: ${[el]}`);
- }
+  }
+
  console.log(...menu.entries());
 
  restaurant.numGuests = 0;
@@ -516,6 +529,26 @@ GOOD LUCK 😀
 
 // My Solution
 // 1)
-for (const [scores, scorer] of game.scored.entries()) {
-  console.log(`Goal ${scores + 1}: ${scorer}`);
-}
+// for (const [scores, scorer] of game.scored.entries()) {
+//   console.log(`Goal ${scores + 1}: ${scorer}`);
+// }
+// // 2}
+// let sum = 0;
+// const odds = Object.values(game.odds);
+// for (const value of odds) {
+//   sum += value;
+// }
+// const averageOdd = sum / odds.length;
+// console.log(averageOdd);
+
+// †utor's Solution
+// const odds = Object.values(game.odds);
+// for (const odd of odds) average += odd;
+// aveage /= odds.length;
+// console.log(average);
+
+// 3)
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x' ? 'draw:' : `victory${game[team]}:`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
+// }
