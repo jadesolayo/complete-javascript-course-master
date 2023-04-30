@@ -67,7 +67,8 @@ console.log(new Set (`Jonas`));
 console.log(orderSet.size);
 
 // To check if an element is in  Set
-console.log();
+console.log(orderSet.has("Pizza"));
+console.log(orderSet.has("Bread"));
 
 /*
  Destructuing Arrays
