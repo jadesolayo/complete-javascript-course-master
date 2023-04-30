@@ -52,26 +52,95 @@ const restaurant = {
 //  A set differs from an array in two ways:
 // 1) Its Element are unique
 // 2) The order of elemets in a set is irrelevant.
-const orderSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]); 
-console.log(orderSet);
-console.log(new Set (`Jonas`));
+// In set, you can't retrieve a value as they're  no indexes.
+// A major use case of Set is to remove duplicaates from an Array.
+// We can also loop through a set just like any other iterable
+// const orderSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(orderSet);
+// console.log(new Set(`Jonas`));
 
 // To get the size of a Set
-console.log(orderSet.size);
+// console.log(orderSet.size);
 
 // To check if an element is in  Set
-console.log(orderSet.has("Pizza"));
-console.log(orderSet.has("Bread"));
+// console.log(orderSet.has('Pizza'));
+// console.log(orderSet.has('Bread'));
 
+// Add new element to a set
+// orderSet.add('Garlic Bread');
+// orderSet.add('Garlic Bread');
+// console.log(orderSet);
+
+// deleting an element from a set
+// orderSet.delete('Risotto');
+// console.log(orderSet);
+
+// To clear a set
+// console.log(orderSet.clear);
+// for (const order of orderSet) console.log(order);
+// Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// To unpack the new set in a new array we use the spread (...) operator since they're both Iterables.
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+
+// console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
+// console.log(new Set('oloyedeyetundejadesola').size);
+
+// Notes on MAPS
+
+// A map is a data Structure that we can use to map values to keys. And just like an object, data is stored in key value pairs in maps. The huge difference between objects amd Maps is that in Maps, the keys can have any type. In Object, the keys are basically always strings but in maps, we can have any data type as keys including objects and Maps itself .
+
+const rest = new Map();
+// To add elements, use .set
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are Opened')
+  .set(false, 'We are Closed');
+// To access the map use .get
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 22;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// To check if a Map has an element
+console.log(rest.has('categories'));
+
+// To delete an element from the map
+rest.delete(2);
+
+// To clear a Map
+// rest.clear()
+
+// To get the size of the map
+console.log(rest.size);
+
+console.log(rest);
+
+// Using Arrays as Key Values
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest.get(arr));
+console.log(rest);
+
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
 /*
- Destructuing Arrays
+ Destructuing Arrays 
 
  const arr = [2, 3, 4];
 
