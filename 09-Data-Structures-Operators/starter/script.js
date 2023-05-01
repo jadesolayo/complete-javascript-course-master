@@ -47,6 +47,91 @@ const restaurant = {
   },
 };
 
+///////////////////////
+// Another way to write Maps
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try Again!'],
+]);
+console.log(question);
+
+// Converting Objects to Maps
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(openingHours);
+
+// Quiz App
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your Answer'));
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// Notes on MAPS
+
+// A map is a data Structure that we can use to map values to keys. And just like an object, data is stored in key value pairs in maps. The huge difference between objects amd Maps is that in Maps, the keys can have any type. In Object, the keys are basically always strings but in maps, we can have any data type as keys including objects and Maps itself . Maps are iterables so the for loop is also available for them.
+
+// const rest = new Map();
+// // To add elements, use .set
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy');
+// rest.set(2, 'Lisbon, Portugal');
+// rest
+//   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are Opened')
+//   .set(false, 'We are Closed');
+// // To access the map use .get
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
+
+// const time = 22;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// // To check if a Map has an element
+// console.log(rest.has('categories'));
+
+// // To delete an element from the map
+// rest.delete(2);
+
+// // To clear a Map
+// // rest.clear()
+
+// // To get the size of the map
+// console.log(rest.size);
+
+// console.log(rest);
+
+// // Using Arrays as Key Values
+// const arr = [1, 2];
+// rest.set(arr, 'Test');
+// console.log(rest.get(arr));
+// console.log(rest);
+
+// rest.set(document.querySelector('h1'), 'Heading');
+// console.log(rest);
+
+// const student = new Map();
+// student.set('Name:', 'Oloyede Yetunde Nimotah');
+// student
+//   .set('Friends', ['Lateefat', 'Mariam', 'Hayzed'])
+//   .set('School', 'Federal University of Agriculture Abeokuta');
+// console.log(student);
+// student.delete('Name:');
+// console.log(student);
+
+///////////////////////
+
 // Notes on SET
 //  Sets are a collection of unique values. A set can never have any duplicates and that makes them very useful in certain situations. Just like array and strings, sets are also iterables.
 //  A set differs from an array in two ways:
@@ -94,51 +179,6 @@ const restaurant = {
 // console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
 // console.log(new Set('oloyedeyetundejadesola').size);
 
-// Notes on MAPS
-
-// A map is a data Structure that we can use to map values to keys. And just like an object, data is stored in key value pairs in maps. The huge difference between objects amd Maps is that in Maps, the keys can have any type. In Object, the keys are basically always strings but in maps, we can have any data type as keys including objects and Maps itself .
-
-const rest = new Map();
-// To add elements, use .set
-rest.set('name', 'Classico Italiano');
-rest.set(1, 'Firenze, Italy');
-rest.set(2, 'Lisbon, Portugal');
-rest
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'We are Opened')
-  .set(false, 'We are Closed');
-// To access the map use .get
-console.log(rest.get('name'));
-console.log(rest.get(true));
-console.log(rest.get(1));
-
-const time = 22;
-console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
-
-// To check if a Map has an element
-console.log(rest.has('categories'));
-
-// To delete an element from the map
-rest.delete(2);
-
-// To clear a Map
-// rest.clear()
-
-// To get the size of the map
-console.log(rest.size);
-
-console.log(rest);
-
-// Using Arrays as Key Values
-const arr = [1, 2];
-rest.set(arr, 'Test');
-console.log(rest.get(arr));
-console.log(rest);
-
-rest.set(document.querySelector('h1'), 'Heading');
-console.log(rest);
 /*
  Destructuing Arrays 
 
