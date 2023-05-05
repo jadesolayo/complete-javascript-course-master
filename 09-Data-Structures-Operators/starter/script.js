@@ -47,6 +47,125 @@ const restaurant = {
   },
 };
 
+// WORKING WITH STRINGS
+
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log(plane[3]);
+
+// STRING METHODS
+
+// To get the length of a string
+// console.log(airline.length);
+// console.log('B737'.length);
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.lastIndexOf('portugal'));
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
+
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  //B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got a middle seat 😁');
+  else {
+    console.log('You got lucky 😎');
+  }
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('14E');
+
+console.log(new String('Jonas'));
+console.log(typeof new String('Jonas'));
+console.log(typeof new String('Jonas').slice(1));
+
+// console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
+
+// Fix capitalization in name
+const passenger = 'joNAs';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// const passengerCorrect = function (passengerName) {
+//   const passengerLower = passengerName.toLowerCase();
+//   const passengerCorrect =
+//     passengerLower[0].toUpperCase() + passengerLower.slice(1);
+//   return passengerCorrect;
+// };
+// console.log(passengerCorrect('stellA'));
+
+// Comparing Email
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// const checkEmail = function (loginEmail) {
+//   const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+//   return normalizedEmail;
+// };
+// console.log(checkEmail('   oloyedeYetunde@gmAil.coM'));
+// Replacing Strings
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All Passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Using Regular Expressions
+// console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo'))
+  console.log('Part of th NEW Airbus Family');
+
+// Prectical Exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome Aboard!. Do have a wonderful flight');
+  }
+};
+
+checkBaggage('I have a laptop, some food, and a pocket knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+// Split and Join
+console.log('a+very+nice+interesting+string'.split('+'));
+console.log('oloyede+jadesola'.split('+'));
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
 // Coding Challenge #3
 
 /* 
@@ -61,19 +180,19 @@ Let's continue with our football betting app! This time, we have a map with a lo
 GOOD LUCK 😀
 */
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
 // My Solution
 // const events = gameEvents.values();
@@ -83,25 +202,25 @@ const gameEvents = new Map([
 // console.log(eventsUnique);
 
 // 1)
-const events = [...new Set(gameEvents.values())];
-console.log(events);
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
 
-// 2)
-gameEvents.delete(64);
-console.log(gameEvents);
+// // 2)
+// gameEvents.delete(64);
+// console.log(gameEvents);
 
-// 3)
-const time = [...gameEvents.keys()].pop();
-console.log(time);
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`
-);
+// // 3)
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
 
-// 4)
-for (const [min, event] of gameEvents) {
-  const half = min <= 45 ? 'FIRST' : 'SECOND';
-  console.log(`[${half} HALF] ${min}: ${event}`);
-}
+// // 4)
+// for (const [min, event] of gameEvents) {
+//   const half = min <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[${half} HALF] ${min}: ${event}`);
+// }
 ///////////////////////
 // Another way to write Maps
 // const question = new Map([
